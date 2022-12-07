@@ -12,6 +12,7 @@ const env = {
   CONFIGMAPS: {
     baseURL: 'https://maps.googleapis.com/maps/api/place/',
   },
+  FIREBASE: 'https://indocyberapp-default-rtdb.firebaseio.com/',
 };
 
 export default env;
