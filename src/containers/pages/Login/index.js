@@ -16,6 +16,7 @@ const Login = () => {
     signIn,
     signInValidate,
     navigation,
+    isLoading,
   } = useAction();
 
   const OptionLabel = ({title, subtitle, onClick}) => {
@@ -34,6 +35,7 @@ const Login = () => {
 
   return (
     <Container
+      loading={isLoading}
       navbar={{
         type: 'nofixed',
         title: 'Welcome Back',

@@ -16,6 +16,7 @@ const Register = () => {
     signUp,
     signUpValidate,
     navigation,
+    isLoading,
   } = useAction();
 
   const OptionLabel = ({title, subtitle, onClick}) => {
@@ -34,6 +35,7 @@ const Register = () => {
 
   return (
     <Container
+      loading={isLoading}
       navbar={{
         type: 'nofixed',
         title: 'Create Your Account',

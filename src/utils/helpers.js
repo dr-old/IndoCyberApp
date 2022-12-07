@@ -1,19 +1,34 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 // import axios from 'axios';
 // import PushNotification from 'react-native-push-notification';
-import {
-  Alert,
-  Linking,
-  PermissionsAndroid,
-  Platform,
-  ToastAndroid,
-  View,
-} from 'react-native';
+import {Alert, Linking, Platform} from 'react-native';
+import {showMessage} from 'react-native-flash-message';
 // import Geolocation from 'react-native-geolocation-service';
 // import {color} from './styles';
 // import TouchID from 'react-native-touch-id';
 
 const helpers = {
+  successMessage: function (message) {
+    showMessage({
+      message: 'Success',
+      description: message,
+      type: 'success',
+    });
+  },
+  errorMessage: function (message) {
+    showMessage({
+      message: 'Failed',
+      description: message,
+      type: 'danger',
+    });
+  },
+  warningMessage: function (message) {
+    showMessage({
+      message: 'Warning',
+      description: message,
+      type: 'warning',
+    });
+  },
   getUid: function () {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(
       /[xy]/g,
