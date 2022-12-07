@@ -26,18 +26,13 @@ function DashboardStack() {
     {name: 'Form', comp: Form, header: true},
     {name: 'Notification', comp: Notification, header: true},
     {name: 'ChatDetail', comp: ChatDetail, header: true},
-    {name: 'Splash', comp: Splash, header: false},
-    {name: 'Register', comp: Register, header: false},
-    {name: 'Login', comp: Login, header: false},
-    {name: 'VerifyUser', comp: VerifyUser, header: false},
     {name: 'MapsSearch', comp: MapsSearch, header: false},
     {name: 'MapsDirection', comp: MapsDirection, header: false},
     {name: 'MapsLocation', comp: MapsLocation, header: false},
-    {name: 'Authenticate', comp: Authenticate, header: false},
   ];
 
   return (
-    <Stack.Navigator initialRouteName="Login">
+    <Stack.Navigator initialRouteName="Home">
       {page.map((item, index) => {
         return (
           <Stack.Screen

@@ -21,10 +21,21 @@ const useAction = () => {
     setLoading(true);
     auth()
       .signInWithEmailAndPassword(form.email, form.password)
-      .then(() => {
+      .then(async () => {
         setLoading(false);
         helpers.successMessage('User account sign in is success!');
         dispatch({type: 'CLEAN_FORM_LOGIN'});
+        const user = await auth().currentUser.getIdTokenResult();
+
+        if (user?.token) {
+          dispatch({
+            type: 'SET_AUTH_USER',
+            firstName: 'Danni',
+            lastName: 'Ramdan',
+            email: user.email,
+            token: user.token,
+          });
+        }
       })
       .catch(error => {
         if (error.code === 'auth/user-not-found') {
