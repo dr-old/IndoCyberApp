@@ -14,7 +14,8 @@
       android:icon="@mipmap/ic_launcher"
       android:roundIcon="@mipmap/ic_launcher_round"
       android:allowBackup="false"
-      android:theme="@style/AppTheme">
+      android:theme="@style/AppTheme"> 
+
       <meta-data  android:name="com.google.android.geo.API_KEY"
                   android:value="AIzaSyBWnPlLaF3eYIce7WB3sP2rdSW11WWnj40"/>
       <!-- Start Setup Notification Without Firebase -->
@@ -29,7 +30,8 @@
 
       <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationActions" />
       <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationPublisher" />
-      <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationBootEventReceiver">
+      <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationBootEventReceiver"
+                android:exported="false">
         <intent-filter>
           <action android:name="android.intent.action.BOOT_COMPLETED" />
           <action android:name="android.intent.action.QUICKBOOT_POWERON" />
@@ -51,7 +53,8 @@
         android:label="@string/app_name"
         android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
         android:launchMode="singleTask"
-        android:windowSoftInputMode="adjustResize">
+        android:windowSoftInputMode="adjustResize"
+        android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
