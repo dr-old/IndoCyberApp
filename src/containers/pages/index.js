@@ -11,7 +11,6 @@ import Register from './Register';
 import Login from './Login';
 import VerifyUser from './VerifyUser';
 import History from './History';
-import Maps from './Maps';
 import MapsSearch from './MapsSearch';
 import MapsDirection from './MapsDirection';
 import MapsLocation from './MapsLocation';
@@ -30,7 +29,6 @@ export {
   Login,
   VerifyUser,
   History,
-  Maps,
   MapsSearch,
   MapsDirection,
   MapsLocation,

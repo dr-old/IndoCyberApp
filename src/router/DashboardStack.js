@@ -31,7 +31,6 @@ function DashboardStack() {
     {name: 'Register', comp: Register, header: false},
     {name: 'Login', comp: Login, header: false},
     {name: 'VerifyUser', comp: VerifyUser, header: false},
-    {name: 'Maps', comp: Maps, header: false},
     {name: 'MapsSearch', comp: MapsSearch, header: false},
     {name: 'MapsDirection', comp: MapsDirection, header: false},
     {name: 'MapsLocation', comp: MapsLocation, header: false},
