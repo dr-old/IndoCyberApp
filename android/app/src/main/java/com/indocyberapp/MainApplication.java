@@ -2,7 +2,6 @@ package com.indocyberapp;
 
 import android.app.Application;
 import android.content.Context;
-import com.arttitude360.reactnative.rngoogleplaces.RNGooglePlacesPackage;
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactActivityDelegate;
