@@ -38,7 +38,7 @@ static void InitializeFlipper(UIApplication *application) {
   // [GMSServices provideAPIKey:@"AIzaSyCAvrollUzKUV0OCfwjBSnEFA1xG612O1Q"]; // add this line using the api key obtained from Google Console
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
-                                                   moduleName:@"UhamkaPlus"
+                                                   moduleName:@"IndoCyberApp"
                                             initialProperties:nil];
 
   if (@available(iOS 13.0, *)) {

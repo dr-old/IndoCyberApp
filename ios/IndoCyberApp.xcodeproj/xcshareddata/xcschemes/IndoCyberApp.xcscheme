@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "UhamkaPlus.app"
-               BlueprintName = "UhamkaPlus"
-               ReferencedContainer = "container:UhamkaPlus.xcodeproj">
+               BuildableName = "IndoCyberApp.app"
+               BlueprintName = "IndoCyberApp"
+               ReferencedContainer = "container:IndoCyberApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "UhamkaPlusTests.xctest"
-               BlueprintName = "UhamkaPlusTests"
-               ReferencedContainer = "container:UhamkaPlus.xcodeproj">
+               BuildableName = "IndoCyberAppTests.xctest"
+               BlueprintName = "IndoCyberAppTests"
+               ReferencedContainer = "container:IndoCyberApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "UhamkaPlus.app"
-            BlueprintName = "UhamkaPlus"
-            ReferencedContainer = "container:UhamkaPlus.xcodeproj">
+            BuildableName = "IndoCyberApp.app"
+            BlueprintName = "IndoCyberApp"
+            ReferencedContainer = "container:IndoCyberApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "UhamkaPlus.app"
-            BlueprintName = "UhamkaPlus"
-            ReferencedContainer = "container:UhamkaPlus.xcodeproj">
+            BuildableName = "IndoCyberApp.app"
+            BlueprintName = "IndoCyberApp"
+            ReferencedContainer = "container:IndoCyberApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
