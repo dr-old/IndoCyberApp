@@ -35,12 +35,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "com.diserva.uhamkaplus",
+    package = "com.indocyberapp",
 )
 
 android_resource(
     name = "res",
-    package = "com.diserva.uhamkaplus",
+    package = "com.indocyberapp",
     res = "src/main/res",
 )
 
