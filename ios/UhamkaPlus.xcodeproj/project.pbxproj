@@ -1,0 +1,905 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00E356F31AD99517003FC87E /* UhamkaPlusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* UhamkaPlusTests.m */; };
+		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
+		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		22C10C528D74EDE9DF3A5932 /* libPods-UhamkaPlus-UhamkaPlusTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4FF2F2403392CDDBAA6C97 /* libPods-UhamkaPlus-UhamkaPlusTests.a */; };
+		44060D8A2924D1DF00AB03E3 /* libGoogle-Maps-iOS-Utils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44060D892924D1DF00AB03E3 /* libGoogle-Maps-iOS-Utils.a */; };
+		44F71B1728E43BF800A0F67C /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B0528E43BF700A0F67C /* Poppins-Thin.ttf */; };
+		44F71B1828E43BF800A0F67C /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B0628E43BF700A0F67C /* Poppins-BoldItalic.ttf */; };
+		44F71B1928E43BF800A0F67C /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B0728E43BF700A0F67C /* Poppins-ExtraLightItalic.ttf */; };
+		44F71B1A28E43BF800A0F67C /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B0828E43BF700A0F67C /* Poppins-Black.ttf */; };
+		44F71B1B28E43BF800A0F67C /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B0928E43BF700A0F67C /* Poppins-ExtraLight.ttf */; };
+		44F71B1C28E43BF800A0F67C /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B0A28E43BF700A0F67C /* Poppins-Light.ttf */; };
+		44F71B1D28E43BF800A0F67C /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B0B28E43BF700A0F67C /* Poppins-SemiBold.ttf */; };
+		44F71B1E28E43BF800A0F67C /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B0C28E43BF700A0F67C /* Poppins-BlackItalic.ttf */; };
+		44F71B1F28E43BF800A0F67C /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B0D28E43BF700A0F67C /* Poppins-ExtraBold.ttf */; };
+		44F71B2028E43BF800A0F67C /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B0E28E43BF700A0F67C /* Poppins-ExtraBoldItalic.ttf */; };
+		44F71B2128E43BF800A0F67C /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B0F28E43BF700A0F67C /* Poppins-MediumItalic.ttf */; };
+		44F71B2228E43BF800A0F67C /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B1028E43BF700A0F67C /* Poppins-SemiBoldItalic.ttf */; };
+		44F71B2328E43BF800A0F67C /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B1128E43BF700A0F67C /* Poppins-Regular.ttf */; };
+		44F71B2428E43BF800A0F67C /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B1228E43BF800A0F67C /* Poppins-Italic.ttf */; };
+		44F71B2528E43BF800A0F67C /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B1328E43BF800A0F67C /* Poppins-ThinItalic.ttf */; };
+		44F71B2628E43BF800A0F67C /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B1428E43BF800A0F67C /* Poppins-Bold.ttf */; };
+		44F71B2728E43BF800A0F67C /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B1528E43BF800A0F67C /* Poppins-Medium.ttf */; };
+		44F71B2828E43BF800A0F67C /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B1628E43BF800A0F67C /* Poppins-LightItalic.ttf */; };
+		44F71B3928E43E0400A0F67C /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B2928E43E0400A0F67C /* Entypo.ttf */; };
+		44F71B3A28E43E0400A0F67C /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B2A28E43E0400A0F67C /* Fontisto.ttf */; };
+		44F71B3B28E43E0400A0F67C /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B2B28E43E0400A0F67C /* Foundation.ttf */; };
+		44F71B3C28E43E0400A0F67C /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B2C28E43E0400A0F67C /* EvilIcons.ttf */; };
+		44F71B3D28E43E0400A0F67C /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B2D28E43E0400A0F67C /* Ionicons.ttf */; };
+		44F71B3E28E43E0400A0F67C /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B2E28E43E0400A0F67C /* SimpleLineIcons.ttf */; };
+		44F71B3F28E43E0400A0F67C /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B2F28E43E0400A0F67C /* Zocial.ttf */; };
+		44F71B4028E43E0400A0F67C /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B3028E43E0400A0F67C /* FontAwesome.ttf */; };
+		44F71B4128E43E0400A0F67C /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B3128E43E0400A0F67C /* FontAwesome5_Solid.ttf */; };
+		44F71B4228E43E0400A0F67C /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B3228E43E0400A0F67C /* Octicons.ttf */; };
+		44F71B4328E43E0400A0F67C /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B3328E43E0400A0F67C /* AntDesign.ttf */; };
+		44F71B4428E43E0400A0F67C /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B3428E43E0400A0F67C /* FontAwesome5_Brands.ttf */; };
+		44F71B4528E43E0400A0F67C /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B3528E43E0400A0F67C /* MaterialCommunityIcons.ttf */; };
+		44F71B4628E43E0400A0F67C /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B3628E43E0400A0F67C /* Feather.ttf */; };
+		44F71B4728E43E0400A0F67C /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B3728E43E0400A0F67C /* MaterialIcons.ttf */; };
+		44F71B4828E43E0400A0F67C /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F71B3828E43E0400A0F67C /* FontAwesome5_Regular.ttf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D32E8E6DDB4E2DEEE24BBEC5 /* libPods-UhamkaPlus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC3234D6142C815E318A9D4B /* libPods-UhamkaPlus.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
+			remoteInfo = UhamkaPlus;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00E356EE1AD99517003FC87E /* UhamkaPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UhamkaPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* UhamkaPlusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UhamkaPlusTests.m; sourceTree = "<group>"; };
+		07DDD005868D40C298AFA405 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-MediumItalic.ttf"; path = "../src/assets/fonts/Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		098834CF4BCBCE12D537E656 /* Pods-UhamkaPlus-UhamkaPlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UhamkaPlus-UhamkaPlusTests.debug.xcconfig"; path = "Target Support Files/Pods-UhamkaPlus-UhamkaPlusTests/Pods-UhamkaPlus-UhamkaPlusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		100B77FF7C9F4455A7DBB18D /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-LightItalic.ttf"; path = "../src/assets/fonts/Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* UhamkaPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UhamkaPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = UhamkaPlus/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = UhamkaPlus/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = UhamkaPlus/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = UhamkaPlus/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = UhamkaPlus/main.m; sourceTree = "<group>"; };
+		1499C2555F4B40D3956E7FE4 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../src/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		347241AB0C624F79A26D361F /* Poppins-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Italic.ttf"; path = "../src/assets/fonts/Poppins-Italic.ttf"; sourceTree = "<group>"; };
+		3490B83BD79741A081289833 /* Poppins-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Black.ttf"; path = "../src/assets/fonts/Poppins-Black.ttf"; sourceTree = "<group>"; };
+		3639D34A04224BDB9E6436A3 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		44060D892924D1DF00AB03E3 /* libGoogle-Maps-iOS-Utils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libGoogle-Maps-iOS-Utils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		44F71ADD28E42E1300A0F67C /* UhamkaPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = UhamkaPlus.entitlements; path = UhamkaPlus/UhamkaPlus.entitlements; sourceTree = "<group>"; };
+		44F71B0528E43BF700A0F67C /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		44F71B0628E43BF700A0F67C /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
+		44F71B0728E43BF700A0F67C /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		44F71B0828E43BF700A0F67C /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		44F71B0928E43BF700A0F67C /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		44F71B0A28E43BF700A0F67C /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		44F71B0B28E43BF700A0F67C /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		44F71B0C28E43BF700A0F67C /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
+		44F71B0D28E43BF700A0F67C /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		44F71B0E28E43BF700A0F67C /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		44F71B0F28E43BF700A0F67C /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		44F71B1028E43BF700A0F67C /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		44F71B1128E43BF700A0F67C /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		44F71B1228E43BF800A0F67C /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
+		44F71B1328E43BF800A0F67C /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
+		44F71B1428E43BF800A0F67C /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		44F71B1528E43BF800A0F67C /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		44F71B1628E43BF800A0F67C /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
+		44F71B2928E43E0400A0F67C /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
+		44F71B2A28E43E0400A0F67C /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
+		44F71B2B28E43E0400A0F67C /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foundation.ttf; sourceTree = "<group>"; };
+		44F71B2C28E43E0400A0F67C /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
+		44F71B2D28E43E0400A0F67C /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
+		44F71B2E28E43E0400A0F67C /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
+		44F71B2F28E43E0400A0F67C /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
+		44F71B3028E43E0400A0F67C /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		44F71B3128E43E0400A0F67C /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
+		44F71B3228E43E0400A0F67C /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
+		44F71B3328E43E0400A0F67C /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntDesign.ttf; sourceTree = "<group>"; };
+		44F71B3428E43E0400A0F67C /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
+		44F71B3528E43E0400A0F67C /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
+		44F71B3628E43E0400A0F67C /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
+		44F71B3728E43E0400A0F67C /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		44F71B3828E43E0400A0F67C /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
+		4C096C49ACF546EA98E71663 /* Poppins-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Light.ttf"; path = "../src/assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; };
+		560986D662D74AEA846F6775 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../src/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		5FC71677D81F4A349BFA39FC /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraBold.ttf"; path = "../src/assets/fonts/Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		68AA5EB8AAE347F9AD4C5FF0 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Thin.ttf"; path = "../src/assets/fonts/Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		6CF3214A9126673D08AE08FC /* Pods-UhamkaPlus-UhamkaPlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UhamkaPlus-UhamkaPlusTests.release.xcconfig"; path = "Target Support Files/Pods-UhamkaPlus-UhamkaPlusTests/Pods-UhamkaPlus-UhamkaPlusTests.release.xcconfig"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = UhamkaPlus/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		85AC350C5D864485AF49B8C4 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraLightItalic.ttf"; path = "../src/assets/fonts/Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		8874BC72D9BA4413AAE107CE /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraLight.ttf"; path = "../src/assets/fonts/Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		9D4FF2F2403392CDDBAA6C97 /* libPods-UhamkaPlus-UhamkaPlusTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UhamkaPlus-UhamkaPlusTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB10BFEB8FE241CEA0B89366 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraBoldItalic.ttf"; path = "../src/assets/fonts/Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		B4B4E51B37D042108718B583 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ThinItalic.ttf"; path = "../src/assets/fonts/Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
+		B63B15B8E1B08AFAB1492E47 /* Pods-UhamkaPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UhamkaPlus.release.xcconfig"; path = "Target Support Files/Pods-UhamkaPlus/Pods-UhamkaPlus.release.xcconfig"; sourceTree = "<group>"; };
+		B7C033ACAEC3427183CF3608 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-BlackItalic.ttf"; path = "../src/assets/fonts/Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
+		BC3234D6142C815E318A9D4B /* libPods-UhamkaPlus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UhamkaPlus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C954C18132CCC39630EC93A0 /* Pods-UhamkaPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UhamkaPlus.debug.xcconfig"; path = "Target Support Files/Pods-UhamkaPlus/Pods-UhamkaPlus.debug.xcconfig"; sourceTree = "<group>"; };
+		D0D4F908A0834FFCA167D79C /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBoldItalic.ttf"; path = "../src/assets/fonts/Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		E570BE8728154E32A8010D28 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Bold.ttf"; path = "../src/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F5743C105C5048F1A5BB49AF /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-BoldItalic.ttf"; path = "../src/assets/fonts/Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00E356EB1AD99517003FC87E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22C10C528D74EDE9DF3A5932 /* libPods-UhamkaPlus-UhamkaPlusTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44060D8A2924D1DF00AB03E3 /* libGoogle-Maps-iOS-Utils.a in Frameworks */,
+				D32E8E6DDB4E2DEEE24BBEC5 /* libPods-UhamkaPlus.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00E356EF1AD99517003FC87E /* UhamkaPlusTests */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F21AD99517003FC87E /* UhamkaPlusTests.m */,
+				00E356F01AD99517003FC87E /* Supporting Files */,
+			);
+			path = UhamkaPlusTests;
+			sourceTree = "<group>";
+		};
+		00E356F01AD99517003FC87E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F11AD99517003FC87E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		13B07FAE1A68108700A75B9A /* UhamkaPlus */ = {
+			isa = PBXGroup;
+			children = (
+				44F71ADD28E42E1300A0F67C /* UhamkaPlus.entitlements */,
+				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				13B07FB61A68108700A75B9A /* Info.plist */,
+				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
+				13B07FB71A68108700A75B9A /* main.m */,
+			);
+			name = UhamkaPlus;
+			sourceTree = "<group>";
+		};
+		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44060D892924D1DF00AB03E3 /* libGoogle-Maps-iOS-Utils.a */,
+				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				BC3234D6142C815E318A9D4B /* libPods-UhamkaPlus.a */,
+				9D4FF2F2403392CDDBAA6C97 /* libPods-UhamkaPlus-UhamkaPlusTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		44F71ADE28E43AEF00A0F67C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				44F71B3328E43E0400A0F67C /* AntDesign.ttf */,
+				44F71B2928E43E0400A0F67C /* Entypo.ttf */,
+				44F71B2C28E43E0400A0F67C /* EvilIcons.ttf */,
+				44F71B3628E43E0400A0F67C /* Feather.ttf */,
+				44F71B3028E43E0400A0F67C /* FontAwesome.ttf */,
+				44F71B3428E43E0400A0F67C /* FontAwesome5_Brands.ttf */,
+				44F71B3828E43E0400A0F67C /* FontAwesome5_Regular.ttf */,
+				44F71B3128E43E0400A0F67C /* FontAwesome5_Solid.ttf */,
+				44F71B2A28E43E0400A0F67C /* Fontisto.ttf */,
+				44F71B2B28E43E0400A0F67C /* Foundation.ttf */,
+				44F71B2D28E43E0400A0F67C /* Ionicons.ttf */,
+				44F71B3528E43E0400A0F67C /* MaterialCommunityIcons.ttf */,
+				44F71B3728E43E0400A0F67C /* MaterialIcons.ttf */,
+				44F71B3228E43E0400A0F67C /* Octicons.ttf */,
+				44F71B2E28E43E0400A0F67C /* SimpleLineIcons.ttf */,
+				44F71B2F28E43E0400A0F67C /* Zocial.ttf */,
+				44F71B0828E43BF700A0F67C /* Poppins-Black.ttf */,
+				44F71B0C28E43BF700A0F67C /* Poppins-BlackItalic.ttf */,
+				44F71B1428E43BF800A0F67C /* Poppins-Bold.ttf */,
+				44F71B0628E43BF700A0F67C /* Poppins-BoldItalic.ttf */,
+				44F71B0D28E43BF700A0F67C /* Poppins-ExtraBold.ttf */,
+				44F71B0E28E43BF700A0F67C /* Poppins-ExtraBoldItalic.ttf */,
+				44F71B0928E43BF700A0F67C /* Poppins-ExtraLight.ttf */,
+				44F71B0728E43BF700A0F67C /* Poppins-ExtraLightItalic.ttf */,
+				44F71B1228E43BF800A0F67C /* Poppins-Italic.ttf */,
+				44F71B0A28E43BF700A0F67C /* Poppins-Light.ttf */,
+				44F71B1628E43BF800A0F67C /* Poppins-LightItalic.ttf */,
+				44F71B1528E43BF800A0F67C /* Poppins-Medium.ttf */,
+				44F71B0F28E43BF700A0F67C /* Poppins-MediumItalic.ttf */,
+				44F71B1128E43BF700A0F67C /* Poppins-Regular.ttf */,
+				44F71B0B28E43BF700A0F67C /* Poppins-SemiBold.ttf */,
+				44F71B1028E43BF700A0F67C /* Poppins-SemiBoldItalic.ttf */,
+				44F71B0528E43BF700A0F67C /* Poppins-Thin.ttf */,
+				44F71B1328E43BF800A0F67C /* Poppins-ThinItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		82CB24913683441800886BD0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C954C18132CCC39630EC93A0 /* Pods-UhamkaPlus.debug.xcconfig */,
+				B63B15B8E1B08AFAB1492E47 /* Pods-UhamkaPlus.release.xcconfig */,
+				098834CF4BCBCE12D537E656 /* Pods-UhamkaPlus-UhamkaPlusTests.debug.xcconfig */,
+				6CF3214A9126673D08AE08FC /* Pods-UhamkaPlus-UhamkaPlusTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		83CBB9F61A601CBA00E9B192 = {
+			isa = PBXGroup;
+			children = (
+				44F71ADE28E43AEF00A0F67C /* Fonts */,
+				13B07FAE1A68108700A75B9A /* UhamkaPlus */,
+				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				00E356EF1AD99517003FC87E /* UhamkaPlusTests */,
+				83CBBA001A601CBA00E9B192 /* Products */,
+				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				82CB24913683441800886BD0 /* Pods */,
+				E1BA3B1F57394273B051D51E /* Resources */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
+		};
+		83CBBA001A601CBA00E9B192 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13B07F961A680F5B00A75B9A /* UhamkaPlus.app */,
+				00E356EE1AD99517003FC87E /* UhamkaPlusTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E1BA3B1F57394273B051D51E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3490B83BD79741A081289833 /* Poppins-Black.ttf */,
+				B7C033ACAEC3427183CF3608 /* Poppins-BlackItalic.ttf */,
+				E570BE8728154E32A8010D28 /* Poppins-Bold.ttf */,
+				F5743C105C5048F1A5BB49AF /* Poppins-BoldItalic.ttf */,
+				5FC71677D81F4A349BFA39FC /* Poppins-ExtraBold.ttf */,
+				AB10BFEB8FE241CEA0B89366 /* Poppins-ExtraBoldItalic.ttf */,
+				8874BC72D9BA4413AAE107CE /* Poppins-ExtraLight.ttf */,
+				85AC350C5D864485AF49B8C4 /* Poppins-ExtraLightItalic.ttf */,
+				347241AB0C624F79A26D361F /* Poppins-Italic.ttf */,
+				4C096C49ACF546EA98E71663 /* Poppins-Light.ttf */,
+				100B77FF7C9F4455A7DBB18D /* Poppins-LightItalic.ttf */,
+				1499C2555F4B40D3956E7FE4 /* Poppins-Medium.ttf */,
+				07DDD005868D40C298AFA405 /* Poppins-MediumItalic.ttf */,
+				3639D34A04224BDB9E6436A3 /* Poppins-Regular.ttf */,
+				560986D662D74AEA846F6775 /* Poppins-SemiBold.ttf */,
+				D0D4F908A0834FFCA167D79C /* Poppins-SemiBoldItalic.ttf */,
+				68AA5EB8AAE347F9AD4C5FF0 /* Poppins-Thin.ttf */,
+				B4B4E51B37D042108718B583 /* Poppins-ThinItalic.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00E356ED1AD99517003FC87E /* UhamkaPlusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "UhamkaPlusTests" */;
+			buildPhases = (
+				0D5DF855138FB6FD7CC04AEE /* [CP] Check Pods Manifest.lock */,
+				00E356EA1AD99517003FC87E /* Sources */,
+				00E356EB1AD99517003FC87E /* Frameworks */,
+				00E356EC1AD99517003FC87E /* Resources */,
+				9A06102FE023B321A47135F7 /* [CP] Embed Pods Frameworks */,
+				DC14AB4CC693D0D9F3D7723B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00E356F51AD99517003FC87E /* PBXTargetDependency */,
+			);
+			name = UhamkaPlusTests;
+			productName = UhamkaPlusTests;
+			productReference = 00E356EE1AD99517003FC87E /* UhamkaPlusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		13B07F861A680F5B00A75B9A /* UhamkaPlus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "UhamkaPlus" */;
+			buildPhases = (
+				DC209FD6E145FCD5B550A8BE /* [CP] Check Pods Manifest.lock */,
+				FD10A7F022414F080027D42C /* Start Packager */,
+				13B07F871A680F5B00A75B9A /* Sources */,
+				13B07F8C1A680F5B00A75B9A /* Frameworks */,
+				13B07F8E1A680F5B00A75B9A /* Resources */,
+				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				E8C62DA9A1A5B277EB26DF14 /* [CP] Embed Pods Frameworks */,
+				0022DCD1156917DA703603ED /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UhamkaPlus;
+			productName = UhamkaPlus;
+			productReference = 13B07F961A680F5B00A75B9A /* UhamkaPlus.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83CBB9F71A601CBA00E9B192 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					00E356ED1AD99517003FC87E = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						LastSwiftMigration = 1120;
+					};
+				};
+			};
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "UhamkaPlus" */;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 83CBB9F61A601CBA00E9B192;
+			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13B07F861A680F5B00A75B9A /* UhamkaPlus */,
+				00E356ED1AD99517003FC87E /* UhamkaPlusTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00E356EC1AD99517003FC87E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8E1A680F5B00A75B9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44F71B2028E43BF800A0F67C /* Poppins-ExtraBoldItalic.ttf in Resources */,
+				44F71B4528E43E0400A0F67C /* MaterialCommunityIcons.ttf in Resources */,
+				44F71B3928E43E0400A0F67C /* Entypo.ttf in Resources */,
+				44F71B2628E43BF800A0F67C /* Poppins-Bold.ttf in Resources */,
+				44F71B1A28E43BF800A0F67C /* Poppins-Black.ttf in Resources */,
+				44F71B3F28E43E0400A0F67C /* Zocial.ttf in Resources */,
+				44F71B4828E43E0400A0F67C /* FontAwesome5_Regular.ttf in Resources */,
+				44F71B2128E43BF800A0F67C /* Poppins-MediumItalic.ttf in Resources */,
+				44F71B2228E43BF800A0F67C /* Poppins-SemiBoldItalic.ttf in Resources */,
+				44F71B3B28E43E0400A0F67C /* Foundation.ttf in Resources */,
+				44F71B3A28E43E0400A0F67C /* Fontisto.ttf in Resources */,
+				44F71B4628E43E0400A0F67C /* Feather.ttf in Resources */,
+				44F71B4428E43E0400A0F67C /* FontAwesome5_Brands.ttf in Resources */,
+				44F71B1728E43BF800A0F67C /* Poppins-Thin.ttf in Resources */,
+				44F71B4328E43E0400A0F67C /* AntDesign.ttf in Resources */,
+				44F71B4228E43E0400A0F67C /* Octicons.ttf in Resources */,
+				44F71B2528E43BF800A0F67C /* Poppins-ThinItalic.ttf in Resources */,
+				44F71B3D28E43E0400A0F67C /* Ionicons.ttf in Resources */,
+				44F71B1E28E43BF800A0F67C /* Poppins-BlackItalic.ttf in Resources */,
+				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				44F71B1C28E43BF800A0F67C /* Poppins-Light.ttf in Resources */,
+				44F71B4028E43E0400A0F67C /* FontAwesome.ttf in Resources */,
+				44F71B3C28E43E0400A0F67C /* EvilIcons.ttf in Resources */,
+				44F71B4128E43E0400A0F67C /* FontAwesome5_Solid.ttf in Resources */,
+				44F71B3E28E43E0400A0F67C /* SimpleLineIcons.ttf in Resources */,
+				44F71B1928E43BF800A0F67C /* Poppins-ExtraLightItalic.ttf in Resources */,
+				44F71B2828E43BF800A0F67C /* Poppins-LightItalic.ttf in Resources */,
+				44F71B2328E43BF800A0F67C /* Poppins-Regular.ttf in Resources */,
+				44F71B4728E43E0400A0F67C /* MaterialIcons.ttf in Resources */,
+				44F71B2428E43BF800A0F67C /* Poppins-Italic.ttf in Resources */,
+				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				44F71B2728E43BF800A0F67C /* Poppins-Medium.ttf in Resources */,
+				44F71B1F28E43BF800A0F67C /* Poppins-ExtraBold.ttf in Resources */,
+				44F71B1D28E43BF800A0F67C /* Poppins-SemiBold.ttf in Resources */,
+				44F71B1828E43BF800A0F67C /* Poppins-BoldItalic.ttf in Resources */,
+				44F71B1B28E43BF800A0F67C /* Poppins-ExtraLight.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0022DCD1156917DA703603ED /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UhamkaPlus/Pods-UhamkaPlus-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UhamkaPlus/Pods-UhamkaPlus-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UhamkaPlus/Pods-UhamkaPlus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+		};
+		0D5DF855138FB6FD7CC04AEE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UhamkaPlus-UhamkaPlusTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A06102FE023B321A47135F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UhamkaPlus-UhamkaPlusTests/Pods-UhamkaPlus-UhamkaPlusTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UhamkaPlus-UhamkaPlusTests/Pods-UhamkaPlus-UhamkaPlusTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UhamkaPlus-UhamkaPlusTests/Pods-UhamkaPlus-UhamkaPlusTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC14AB4CC693D0D9F3D7723B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UhamkaPlus-UhamkaPlusTests/Pods-UhamkaPlus-UhamkaPlusTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UhamkaPlus-UhamkaPlusTests/Pods-UhamkaPlus-UhamkaPlusTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UhamkaPlus-UhamkaPlusTests/Pods-UhamkaPlus-UhamkaPlusTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC209FD6E145FCD5B550A8BE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UhamkaPlus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8C62DA9A1A5B277EB26DF14 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UhamkaPlus/Pods-UhamkaPlus-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UhamkaPlus/Pods-UhamkaPlus-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UhamkaPlus/Pods-UhamkaPlus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD10A7F022414F080027D42C /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00E356EA1AD99517003FC87E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00E356F31AD99517003FC87E /* UhamkaPlusTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F871A680F5B00A75B9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				13B07FC11A68108700A75B9A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13B07F861A680F5B00A75B9A /* UhamkaPlus */;
+			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		00E356F61AD99517003FC87E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 098834CF4BCBCE12D537E656 /* Pods-UhamkaPlus-UhamkaPlusTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = UhamkaPlusTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UhamkaPlus.app/UhamkaPlus";
+			};
+			name = Debug;
+		};
+		00E356F71AD99517003FC87E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CF3214A9126673D08AE08FC /* Pods-UhamkaPlus-UhamkaPlusTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = UhamkaPlusTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UhamkaPlus.app/UhamkaPlus";
+			};
+			name = Release;
+		};
+		13B07F941A680F5B00A75B9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C954C18132CCC39630EC93A0 /* Pods-UhamkaPlus.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = UhamkaPlus/UhamkaPlus.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"FB_SONARKIT_ENABLED=1",
+					"HAVE_GOOGLE_MAPS=1",
+				);
+				INFOPLIST_FILE = UhamkaPlus/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Uhamka +";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.1;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.diserva.--PRODUCT-NAME-rfc1034identifier-";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.diserva.uhamkaplus;
+				PRODUCT_NAME = UhamkaPlus;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		13B07F951A680F5B00A75B9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B63B15B8E1B08AFAB1492E47 /* Pods-UhamkaPlus.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = UhamkaPlus/UhamkaPlus.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"HAVE_GOOGLE_MAPS=1",
+				);
+				INFOPLIST_FILE = UhamkaPlus/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Uhamka +";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.1;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.diserva.--PRODUCT-NAME-rfc1034identifier-";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.diserva.uhamkaplus;
+				PRODUCT_NAME = UhamkaPlus;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		83CBBA201A601CBA00E9B192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/lib/swift\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		83CBBA211A601CBA00E9B192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/lib/swift\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "UhamkaPlusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00E356F61AD99517003FC87E /* Debug */,
+				00E356F71AD99517003FC87E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "UhamkaPlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13B07F941A680F5B00A75B9A /* Debug */,
+				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "UhamkaPlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83CBBA201A601CBA00E9B192 /* Debug */,
+				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
+}
