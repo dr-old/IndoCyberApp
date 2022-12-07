@@ -1,6 +1,7 @@
 import auth from '@react-native-firebase/auth';
 import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
+import {ToastAndroid} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import helpers from '../../../utils/helpers';
 
@@ -23,7 +24,10 @@ const useAction = () => {
       .signInWithEmailAndPassword(form.email, form.password)
       .then(async () => {
         setLoading(false);
-        helpers.successMessage('User account sign in is success!');
+        ToastAndroid.show(
+          'User account sign in is success!',
+          ToastAndroid.BOTTOM,
+        );
         dispatch({type: 'CLEAN_FORM_LOGIN'});
         const user = await auth().currentUser.getIdTokenResult();
 
@@ -39,15 +43,21 @@ const useAction = () => {
       })
       .catch(error => {
         if (error.code === 'auth/user-not-found') {
-          helpers.errorMessage('That user account is not found!');
+          ToastAndroid.show(
+            'That user account is not found!',
+            ToastAndroid.BOTTOM,
+          );
         }
 
         if (error.code === 'auth/invalid-email') {
-          helpers.errorMessage('That email address is invalid!');
+          ToastAndroid.show(
+            'That email address is invalid!',
+            ToastAndroid.BOTTOM,
+          );
         }
 
         if (error.code === 'auth/wrong-password') {
-          helpers.errorMessage('That password is invalid!');
+          ToastAndroid.show('That password is invalid!', ToastAndroid.BOTTOM);
         }
 
         console.log(error.message);

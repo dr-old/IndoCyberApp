@@ -3,7 +3,6 @@ import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import auth from '@react-native-firebase/auth';
 import database from '@react-native-firebase/database';
-import helpers from '../../../utils/helpers';
 import {ToastAndroid} from 'react-native';
 
 const useAction = () => {
@@ -40,7 +39,32 @@ const useAction = () => {
       });
   };
 
+  const pushProduct = () => {
+    setLoading(true);
+    const newReference = database().ref('indocyberapp/product').push();
+    newReference
+      .set({
+        productCode: 'SKUGIVKNG',
+        productName: 'Giv Kuning',
+        price: 10000,
+        discount: 0,
+        currency: 'IDR',
+        dimension: '10 cm x 7 cm',
+        unit: 'PCS',
+      })
+      .then(() => {
+        setLoading(false);
+        ToastAndroid.show('Product is created!', ToastAndroid.BOTTOM);
+      })
+      .catch(error => {
+        ToastAndroid.show('Product is invalid!', ToastAndroid.BOTTOM);
+        console.log('error', error);
+        setLoading(false);
+      });
+  };
+
   const signUp = () => {
+    // pushProduct();
     setLoading(true);
     auth()
       .createUserWithEmailAndPassword(form.email, form.password)

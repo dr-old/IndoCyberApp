@@ -10,7 +10,15 @@ import useAction from './useAction';
 import WatchPosition from './WatchPosition';
 
 function Home() {
-  const {category, navigation, onScrollEnd, banner, product} = useAction();
+  const {
+    category,
+    navigation,
+    onScrollEnd,
+    banner,
+    product,
+    isLoading,
+    isProduct,
+  } = useAction();
 
   const CardBalance = () => {
     return (
@@ -52,8 +60,8 @@ function Home() {
         onSearch: () => console.log(),
         onProfile: () => console.log(),
       }}>
-      <CardBalance />
-      <View style={stylesCust.card}>
+      {/* <CardBalance /> */}
+      {/* <View style={stylesCust.card}>
         <Text style={styles.h5(color.bluep1)}>Kategori</Text>
         <Divider height={10} />
         <View style={stylesCust.cardCategory}>
@@ -69,7 +77,7 @@ function Home() {
             );
           })}
         </View>
-      </View>
+      </View> */}
       <View style={stylesCust.card}>
         <Text style={styles.h5(color.bluep1)}>Promo buat kamu</Text>
         <Divider height={10} />
@@ -79,7 +87,7 @@ function Home() {
       <View style={stylesCust.card}>
         <Text style={styles.h5(color.bluep1)}>Rekomendasi</Text>
         <Divider height={10} />
-        <CardProduct data={product} />
+        <CardProduct data={isProduct.filter(item => item?.id)} />
       </View>
     </Container>
   );

@@ -1,13 +1,17 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Alert, Platform} from 'react-native';
 import {useDispatch} from 'react-redux';
 import Geolocation from '@react-native-community/geolocation';
 import {check, request, PERMISSIONS, RESULTS} from 'react-native-permissions';
+import database from '@react-native-firebase/database';
 
 const useAction = () => {
   const dispatch = useDispatch();
   const navigation = useNavigation();
+  const [isLoading, setLoading] = useState(false);
+  const [isProduct, setProduct] = useState([]);
+
   const category = [
     {
       name: `Pakaian\nWanita`,
@@ -77,9 +81,32 @@ const useAction = () => {
     },
   ];
 
+  const getProduct = () => {
+    database()
+      .ref('indocyberapp/product')
+      .orderByValue()
+      .once('value')
+      .then(function (snapshot) {
+        let newData = [];
+        snapshot.forEach(function (childSnapshot) {
+          let data = childSnapshot.val();
+          data['id'] = childSnapshot.key;
+          newData.push(data);
+        });
+        setProduct(newData);
+      });
+  };
+
   useEffect(() => {
-    getCurrentPosition();
-    handleLocationPermission();
+    let mounted = true;
+    if (mounted) {
+      getProduct();
+      getCurrentPosition();
+      handleLocationPermission();
+    }
+    return () => {
+      mounted = false;
+    };
   });
 
   const getCurrentPosition = () => {
@@ -151,6 +178,8 @@ const useAction = () => {
     onScrollEnd,
     banner,
     product,
+    isLoading,
+    isProduct,
   };
 };
 
