@@ -14,6 +14,7 @@ import History from './History';
 import MapsSearch from './MapsSearch';
 import MapsDirection from './MapsDirection';
 import MapsLocation from './MapsLocation';
+import Authenticate from './Authenticate';
 
 export {
   Home,
@@ -32,4 +33,5 @@ export {
   MapsSearch,
   MapsDirection,
   MapsLocation,
+  Authenticate,
 };

@@ -1,11 +1,10 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
+  Authenticate,
   ChatDetail,
   Form,
-  Home,
   Login,
-  Maps,
   MapsDirection,
   MapsLocation,
   MapsSearch,
@@ -34,10 +33,11 @@ function DashboardStack() {
     {name: 'MapsSearch', comp: MapsSearch, header: false},
     {name: 'MapsDirection', comp: MapsDirection, header: false},
     {name: 'MapsLocation', comp: MapsLocation, header: false},
+    {name: 'Authenticate', comp: Authenticate, header: false},
   ];
 
   return (
-    <Stack.Navigator initialRouteName="Splash">
+    <Stack.Navigator initialRouteName="Login">
       {page.map((item, index) => {
         return (
           <Stack.Screen

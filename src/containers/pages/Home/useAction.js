@@ -27,17 +27,17 @@ const useAction = () => {
     {
       name: 'Sepatu',
       image: require('../../../assets/icon/Shoes.png'),
-      onClick: () => navigation.push('MapsLocation'),
+      onClick: () => console.log('MapsLocation'),
     },
     {
       name: 'Elektronik',
       image: require('../../../assets/icon/Phone-Desktop.png'),
-      onClick: () => navigation.push('MapsSearch'),
+      onClick: () => navigation.push('Authenticate'),
     },
     {
       name: 'Lainnya',
       image: require('../../../assets/icon/More.png'),
-      onClick: () => navigation.push('Maps', {itemLocation: {}}),
+      onClick: () => navigation.push('MapsSearch'),
     },
   ];
 
