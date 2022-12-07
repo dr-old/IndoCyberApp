@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1092934573195",
+    "project_id": "indocyberapp",
+    "storage_bucket": "indocyberapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092934573195:android:f11c1098ddc8bac517088e",
+        "android_client_info": {
+          "package_name": "com.indocyberapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1092934573195-mi8j0d7i3cc67nqnb59ho4bfqecspbmj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAy1sFfzwXZKGMT01S3rdp-6NVoMmQym2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1092934573195-mi8j0d7i3cc67nqnb59ho4bfqecspbmj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
