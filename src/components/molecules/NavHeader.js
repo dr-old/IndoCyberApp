@@ -4,19 +4,20 @@ import {color, styles} from '../../utils/styles';
 import {ButtonIcon, Divider, InputText} from '../atoms';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-function NavHeader({title, subtitle, onClick, onSearch, onProfile}) {
+function NavHeader({title, subtitle, onClick, onSearch, onProfile, type}) {
   const [isSearch, setSearch] = useState('');
   return (
     <TouchableOpacity
       onPress={onClick ? onClick : null}
-      style={stylesCust.header}>
+      disabled={type ? true : false}
+      style={stylesCust.header(type)}>
       {onClick ? (
         <ButtonIcon
           type={stylesCust.buttonType}
           style={stylesCust.buttonFloat}
           name="chevron-left"
           size={20}
-          // onClick={onClick}
+          onClick={type ? onClick : null}
         />
       ) : null}
       {onSearch ? (
@@ -73,13 +74,13 @@ const stylesCust = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  header: {
-    backgroundColor: color.white,
-    width: '100%',
+  header: (type = null) => ({
+    backgroundColor: type ? 'transparent' : color.white,
+    width: type ? 87 : '100%',
     height: 87,
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }),
   buttonType: {
     backgroundColor: 'transparent',
     borderColor: 'transparent',

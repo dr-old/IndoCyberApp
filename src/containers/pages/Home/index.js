@@ -1,13 +1,11 @@
 import * as React from 'react';
-import {View, Text, ScrollView} from 'react-native';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import {ButtonIcon, ButtonImage, Divider} from '../../../components/atoms';
+import {View, Text} from 'react-native';
+import {ButtonIcon, Divider} from '../../../components/atoms';
 import {CardProduct} from '../../../components/molecules';
 import {color, styles} from '../../../utils/styles';
 import {Container, ImageCarousel} from '../../organism';
 import stylesCust from './stylesCust';
 import useAction from './useAction';
-import WatchPosition from './WatchPosition';
 
 function Home() {
   const {
@@ -60,30 +58,11 @@ function Home() {
         onSearch: () => console.log(),
         onProfile: () => console.log(),
       }}>
-      {/* <CardBalance /> */}
-      {/* <View style={stylesCust.card}>
-        <Text style={styles.h5(color.bluep1)}>Kategori</Text>
-        <Divider height={10} />
-        <View style={stylesCust.cardCategory}>
-          {category.map((item, index) => {
-            return (
-              <View key={index} style={stylesCust.cardCategoryIcon}>
-                <ButtonImage
-                  image={item.image}
-                  label={item.name}
-                  onClick={item.onClick}
-                />
-              </View>
-            );
-          })}
-        </View>
-      </View> */}
       <View style={stylesCust.card}>
         <Text style={styles.h5(color.bluep1)}>Promo buat kamu</Text>
         <Divider height={10} />
       </View>
       <ImageCarousel data={banner} autoPlay={true} />
-      {/* <WatchPosition /> */}
       <View style={stylesCust.card}>
         <Text style={styles.h5(color.bluep1)}>Rekomendasi</Text>
         <Divider height={10} />

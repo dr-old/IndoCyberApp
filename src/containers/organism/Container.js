@@ -1,7 +1,7 @@
 import React from 'react';
 import {Alert, ScrollView, StatusBar, StyleSheet, View} from 'react-native';
 import FlashMessage from 'react-native-flash-message';
-import {Divider} from '../../components/atoms';
+import {ButtonIcon, Divider} from '../../components/atoms';
 import {BarHeader, LoadingExtern, NavHeader} from '../../components/molecules';
 import {color} from '../../utils/styles';
 
@@ -46,6 +46,15 @@ const Container = ({
             onClick={navbar?.onClick}
           />
         ) : null}
+        {navbar?.type === 'absolute' ? (
+          <ButtonIcon
+            type={stylesCust.buttonType}
+            style={stylesCust.buttonFloat}
+            name="chevron-left"
+            size={20}
+            onClick={navbar?.onClick}
+          />
+        ) : null}
         {children}
         <Divider height={50} />
       </ScrollView>
@@ -58,6 +67,18 @@ const stylesCust = StyleSheet.create({
   container: (backgroundColor = color.white) => ({
     backgroundColor: backgroundColor,
   }),
+  buttonType: {
+    backgroundColor: color.green,
+    borderColor: 'transparent',
+    color: color.tblack,
+  },
+  buttonFloat: {
+    position: 'absolute',
+    left: 0,
+    top: 30.9,
+    marginLeft: 30,
+    zIndex: 2,
+  },
 });
 
 export default Container;
