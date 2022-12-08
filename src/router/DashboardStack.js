@@ -3,12 +3,14 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
   Authenticate,
   ChatDetail,
+  Checkout,
   Form,
   Login,
   MapsDirection,
   MapsLocation,
   MapsSearch,
   Notification,
+  ProductDetail,
   Register,
   Splash,
   Typography,
@@ -29,6 +31,8 @@ function DashboardStack() {
     {name: 'MapsSearch', comp: MapsSearch, header: false},
     {name: 'MapsDirection', comp: MapsDirection, header: false},
     {name: 'MapsLocation', comp: MapsLocation, header: false},
+    {name: 'ProductDetail', comp: ProductDetail, header: false},
+    {name: 'Checkout', comp: Checkout, header: false},
   ];
 
   return (

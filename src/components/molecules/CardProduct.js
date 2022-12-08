@@ -1,15 +1,27 @@
 import React from 'react';
-import {Image, Platform, StyleSheet, Text, View} from 'react-native';
+import {
+  Image,
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import helpers from '../../utils/helpers';
 import {color, styles} from '../../utils/styles';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import {useNavigation} from '@react-navigation/native';
 
 const CardProduct = ({data}) => {
+  const navigation = useNavigation();
   return (
     <View style={stylesCust.cardList}>
       {data.map((item, index) => {
         return (
-          <View key={index} style={stylesCust.cardItem}>
+          <TouchableOpacity
+            onPress={() => navigation.push('ProductDetail', {itemData: item})}
+            key={index}
+            style={stylesCust.cardItem}>
             <View style={stylesCust.cardImage}>
               <Image
                 source={{
@@ -49,7 +61,7 @@ const CardProduct = ({data}) => {
                 <Text style={stylesCust.ratingText}>5.0 | Terjual 10</Text>
               </View> */}
             </View>
-          </View>
+          </TouchableOpacity>
         );
       })}
     </View>
@@ -75,7 +87,7 @@ const stylesCust = StyleSheet.create({
   ],
   image: {
     resizeMode: 'cover',
-    width: 150,
+    width: '100%',
     height: 100,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,

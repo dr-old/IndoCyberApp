@@ -15,6 +15,8 @@ import MapsSearch from './MapsSearch';
 import MapsDirection from './MapsDirection';
 import MapsLocation from './MapsLocation';
 import Authenticate from './Authenticate';
+import ProductDetail from './ProductDetail';
+import Checkout from './Checkout';
 
 export {
   Home,
@@ -34,4 +36,6 @@ export {
   MapsDirection,
   MapsLocation,
   Authenticate,
+  ProductDetail,
+  Checkout,
 };
