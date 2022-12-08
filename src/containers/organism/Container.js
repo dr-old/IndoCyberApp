@@ -27,6 +27,7 @@ const Container = ({
         <NavHeader
           title={navbar?.title}
           subtitle={navbar?.subtitle}
+          isSearch={navbar?.isSearch}
           onSearch={navbar?.onSearch}
           onProfile={navbar?.onProfile}
           onClick={navbar?.onClick}
@@ -41,6 +42,7 @@ const Container = ({
           <NavHeader
             title={navbar?.title}
             subtitle={navbar?.subtitle}
+            isSearch={navbar?.isSearch}
             onSearch={navbar?.onSearch}
             onProfile={navbar?.onProfile}
             onClick={navbar?.onClick}

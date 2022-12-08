@@ -5,12 +5,15 @@ import {useDispatch} from 'react-redux';
 import Geolocation from '@react-native-community/geolocation';
 import {check, request, PERMISSIONS, RESULTS} from 'react-native-permissions';
 import database from '@react-native-firebase/database';
+import auth from '@react-native-firebase/auth';
 
 const useAction = () => {
   const dispatch = useDispatch();
   const navigation = useNavigation();
   const [isLoading, setLoading] = useState(false);
   const [isProduct, setProduct] = useState([]);
+  const [isProductBackup, setProductBackup] = useState([]);
+  const [isSearch, setSearch] = useState([]);
 
   const category = [
     {
@@ -81,6 +84,17 @@ const useAction = () => {
     },
   ];
 
+  const onSearch = event => {
+    let searchText = event;
+    setSearch(searchText);
+    searchText = searchText.trim().toUpperCase();
+    let data = isProductBackup;
+    if (data?.length > 0) {
+      data = data.filter(l => l.productName?.toUpperCase().match(searchText));
+      setProduct(data);
+    }
+  };
+
   const getProduct = () => {
     database()
       .ref('indocyberapp/product')
@@ -94,6 +108,7 @@ const useAction = () => {
           newData.push(data);
         });
         setProduct(newData);
+        setProductBackup(newData);
       });
   };
 
@@ -101,81 +116,25 @@ const useAction = () => {
     let mounted = true;
     if (mounted) {
       getProduct();
-      getCurrentPosition();
-      handleLocationPermission();
     }
     return () => {
       mounted = false;
     };
   });
 
-  const getCurrentPosition = () => {
-    Geolocation.getCurrentPosition(
-      position => {
-        dispatch({
-          type: 'SET_FORM_LOCATION',
-          inputType: 'location',
-          inputValue: position,
-        });
-      },
-      error => {
-        Alert.alert('GetCurrentPosition Error', JSON.stringify(error));
-        dispatch({
-          type: 'SET_FORM_LOCATION',
-          inputType: 'location',
-          inputValue: {},
-        });
-      },
-      {
-        enableHighAccuracy: true,
-        // timeout: 20000,
-        // maximumAge: 1000,
-      },
-    );
-  };
-
-  const handleLocationPermission = async () => {
-    // 👈
-    let permissionCheck = '';
-    if (Platform.OS === 'ios') {
-      permissionCheck = await check(PERMISSIONS.IOS.LOCATION_WHEN_IN_USE);
-
-      if (
-        permissionCheck === RESULTS.BLOCKED ||
-        permissionCheck === RESULTS.DENIED
-      ) {
-        const permissionRequest = await request(
-          PERMISSIONS.IOS.LOCATION_WHEN_IN_USE,
-        );
-        permissionRequest === RESULTS.GRANTED
-          ? console.log('Location permission granted.')
-          : console.log('location permission denied.');
-      }
-    }
-
-    if (Platform.OS === 'android') {
-      permissionCheck = await check(PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION);
-
-      if (
-        permissionCheck === RESULTS.BLOCKED ||
-        permissionCheck === RESULTS.DENIED
-      ) {
-        const permissionRequest = await request(
-          PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION,
-        );
-        permissionRequest === RESULTS.GRANTED
-          ? console.log('Location permission granted.')
-          : console.log('location permission denied.');
-      }
-    }
-  };
-
   const onScrollEnd = e => {};
+  const signOut = () => {
+    auth().signOut();
+    dispatch({type: 'CLEAN_AUTH_USER'});
+  };
 
   return {
     category,
     navigation,
     onScrollEnd,
+    onSearch,
+    signOut,
+    isSearch,
     banner,
     product,
     isLoading,

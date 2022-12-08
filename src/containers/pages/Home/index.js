@@ -12,43 +12,14 @@ function Home() {
     category,
     navigation,
     onScrollEnd,
+    onSearch,
+    signOut,
+    isSearch,
     banner,
     product,
     isLoading,
     isProduct,
   } = useAction();
-
-  const CardBalance = () => {
-    return (
-      <View style={stylesCust.cardBalance}>
-        <View style={{flex: 1}}>
-          <Text style={styles.p4(color.tgrey)}>Saldo</Text>
-          <Text style={styles.h4(color.white)}>Rp. 1.000.000</Text>
-        </View>
-        <View style={{flexDirection: 'row'}}>
-          <ButtonIcon
-            type={stylesCust.icon}
-            label="Top Up"
-            labelColor={color.white}
-            name="plus-square"
-            marginVertical={0}
-            size={20}
-            onClick={() => console.log('primary')}
-          />
-          <Divider width={10} />
-          <ButtonIcon
-            type={stylesCust.icon}
-            label="Transfer"
-            labelColor={color.white}
-            name="paper-plane"
-            marginVertical={0}
-            size={20}
-            onClick={() => console.log('primary')}
-          />
-        </View>
-      </View>
-    );
-  };
 
   return (
     <Container
@@ -56,7 +27,7 @@ function Home() {
       navbar={{
         type: 'fixed',
         onSearch: () => console.log(),
-        onProfile: () => console.log(),
+        onProfile: () => signOut(),
       }}>
       <View style={stylesCust.card}>
         <Text style={styles.h5(color.bluep1)}>Promo buat kamu</Text>
