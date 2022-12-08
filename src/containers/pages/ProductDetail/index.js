@@ -27,9 +27,30 @@ function ProductDetail({route}) {
       }}>
       <Image source={{uri: itemData.image}} style={stylesCust.image} />
       <View style={stylesCust.price}>
-        <Text style={styles.h3(color.white)}>
-          {helpers.formatCurrency(itemData.price, 'Rp. ')}
-        </Text>
+        {itemData?.discount > 0 ? (
+          <>
+            <Text style={styles.h3(color.white)}>
+              {helpers.formatCurrency(
+                parseInt(
+                  itemData.price - (itemData.price * itemData.discount) / 100,
+                ),
+                'Rp. ',
+              )}
+            </Text>
+            <Divider width={20} />
+            <Text
+              style={[
+                styles.p3(color.white),
+                {textDecorationLine: 'line-through'},
+              ]}>
+              {helpers.formatCurrency(itemData.price, 'Rp. ')}
+            </Text>
+          </>
+        ) : (
+          <Text style={styles.h3(color.white)}>
+            {helpers.formatCurrency(itemData.price, 'Rp. ')}
+          </Text>
+        )}
       </View>
       <View style={stylesCust.card}>
         <Text style={styles.h4()}>{itemData.productName}</Text>
@@ -41,7 +62,9 @@ function ProductDetail({route}) {
         <Text style={styles.p5(color.tgrey)}>Unit : {itemData.unit}</Text>
         <View style={stylesCust.qty}>
           <ButtonIcon
-            type={stylesCust.buttonType(isQty <= 1 ? color.tgrey : null)}
+            type={stylesCust.buttonType(
+              isQty <= 1 ? color.tgrey : color.tblack,
+            )}
             name="minus-circle"
             size={20}
             disabled={isQty <= 1 ? true : false}

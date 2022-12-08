@@ -12,7 +12,9 @@ const stylesCust = StyleSheet.create({
     width: '100%',
     backgroundColor: color.oranget,
     paddingHorizontal: 30,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   icon: {
     backgroundColor: 'transparent',

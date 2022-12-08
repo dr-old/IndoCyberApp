@@ -20,7 +20,9 @@ const useAction = () => {
       let oldFilter = parse.filter(i => i.id !== data.id);
       if (parse?.length > 0) {
         let oldQty = parse.find(i => i.id === data.id);
-        data['qty'] = parseInt(data['qty'] + oldQty.qty);
+        if (oldQty?.qty) {
+          data['qty'] = parseInt(data['qty'] + oldQty.qty);
+        }
       }
       let newData = [...oldFilter, data];
       helpers.setLocalStorage(newData, `@USER_${login.email}`);

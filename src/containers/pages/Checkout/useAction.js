@@ -11,9 +11,41 @@ const useAction = () => {
   const login = useSelector(state => state.authReducer);
   const navigation = useNavigation();
   const [isQty, setQty] = useState(1);
+  const [isProduct, setProduct] = useState([]);
 
-  const buy = async data => {
-    data['qty'] = isQty;
+  useEffect(() => {
+    getProduct();
+  });
+
+  const getProduct = async () => {
+    const oldData = await helpers.getLocalStorage(`@USER_${login.email}`);
+    if (oldData) {
+      setProduct(JSON.parse(oldData));
+    } else {
+      setProduct([]);
+    }
+  };
+
+  const updateQty = async (type, data) => {
+    console.log(type, data);
+    let filter = [];
+    if (type === 'plus') {
+      data['qty'] = parseInt(data.qty + 1);
+      filter = isProduct.filter(i => i.id !== data.id);
+      filter.unshift(data);
+    }
+    if (type === 'minus') {
+      data['qty'] = parseInt(data.qty - 1);
+      filter = isProduct.filter(i => i.id !== data.id);
+      if (data['qty'] > 0) {
+        filter.unshift(data);
+      }
+    }
+    setProduct(filter);
+    await helpers.setLocalStorage(filter, `@USER_${login.email}`);
+  };
+
+  const buy = async () => {
     const oldData = await helpers.getLocalStorage(`@USER_${login.email}`);
     console.log(oldData);
     // if (oldData) {
@@ -30,7 +62,7 @@ const useAction = () => {
     // }
   };
 
-  return {navigation, buy, isQty, setQty};
+  return {navigation, isProduct, buy, updateQty};
 };
 
 export default useAction;

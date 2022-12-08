@@ -2,7 +2,7 @@ import * as React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 // import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import {Chat, History, Home, Setting} from '../containers/pages';
+import {Chat, Checkout, History, Home, Setting} from '../containers/pages';
 import {color as clr, styles} from '../utils/styles';
 import {Platform} from 'react-native';
 
@@ -11,7 +11,12 @@ const Tab = createBottomTabNavigator();
 export default function TabStack() {
   const tabBar = [
     {name: 'HomeTab', label: 'Beranda', icon: 'home', comp: Home},
-    {name: 'ChatTab', label: 'Keranjang', icon: 'shopping-cart', comp: Chat},
+    {
+      name: 'CheckoutTab',
+      label: 'Keranjang',
+      icon: 'shopping-cart',
+      comp: Checkout,
+    },
     {name: 'HistoryTab', label: 'Riwayat', icon: 'history', comp: History},
     {name: 'NoticationTab', label: 'Notifikasi', icon: 'bell', comp: Setting},
   ];

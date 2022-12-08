@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {color} from '../../../utils/styles';
+import {color, styles} from '../../../utils/styles';
 
 const stylesCust = StyleSheet.create({
   card: {
@@ -28,14 +28,39 @@ const stylesCust = StyleSheet.create({
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
   },
-  image: {resizeMode: 'contain'},
+  image: {resizeMode: 'cover', width: '100%', height: 100, borderRadius: 8},
   cardImage: {
     height: 100,
-    width: undefined,
+    width: 143,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: color.white8,
   },
+  footer: {
+    backgroundColor: color.white8,
+    paddingHorizontal: 30,
+    paddingVertical: 20,
+  },
+  buttonType: (clr = color.tblack) => ({
+    backgroundColor: 'transparent',
+    borderColor: 'transparent',
+    color: clr,
+  }),
+  buttonFloat: {
+    position: 'absolute',
+    left: 0,
+    top: 30.9,
+    marginLeft: 30,
+    zIndex: 2,
+  },
+  qty: {
+    width: 100,
+    height: 45,
+    alignSelf: 'flex-end',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+  },
+  qtyText: [styles.h4(), {paddingBottom: 5}],
 });
 
 export default stylesCust;
