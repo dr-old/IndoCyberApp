@@ -15,7 +15,7 @@ const useAction = () => {
   const buy = async data => {
     data['qty'] = isQty;
     const oldData = await helpers.getLocalStorage(`@USER_${login.email}`);
-    if (oldData) {
+    if (JSON.parse(oldData)?.length > 0) {
       let parse = JSON.parse(oldData);
       let oldFilter = parse.filter(i => i.id !== data.id);
       if (parse?.length > 0) {
@@ -32,6 +32,12 @@ const useAction = () => {
       let newData = [...oldFilter, data];
       helpers.setLocalStorage(newData, `@USER_${login.email}`);
     } else {
+      let price =
+        data?.discount > 0
+          ? data.price - (data.price * data.discount) / 100
+          : data.price;
+      data['subtotal'] = parseInt(data.qty * price);
+      console.log(2, data);
       helpers.setLocalStorage([data], `@USER_${login.email}`);
     }
     navigation.push('Checkout');

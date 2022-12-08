@@ -57,39 +57,81 @@ const useAction = () => {
     await helpers.setLocalStorage(filter, `@USER_${login.email}`);
   };
 
+  function onPostLike(postId) {
+    database()
+      .ref(`indocyberapp/transaction/${postId}`)
+      .once('value')
+      .then(snapshot => {
+        console.log('User data: ', snapshot.val());
+      });
+  }
+
   const confirm = () => {
     console.log(isProduct);
-    const newReference = database().ref('/transaction').push();
+    setLoading(true);
+    const newReference = database().ref('indocyberapp/transaction').push();
+    const newRefDetail = database()
+      .ref('indocyberapp/transactionDetail')
+      .push();
     const postId = newReference.key;
+    const id = moment().format('YYYYMMDD') + helpers.getSequence();
+    const date = moment().format('YYYY-MM-DD HH:mm');
+    // const str = '1';
+    // str.padStart(4, '0'),
+
     newReference
       .set({
-        date: moment().format('YYYY-MM-DD HH:mm'),
+        date: date,
         documentCode: 'TRX',
-        documentNumber: 'TRX',
+        documentNumber: id,
         email: login.email,
-        total: '',
+        total: helpers.sumArrayNew(isProduct, 'subtotal'),
       })
       .then(() => {
+        // Promise.all(
+        isProduct.forEach(item => {
+          database()
+            .ref('indocyberapp/transactionDetail')
+            .push()
+            .set({
+              currency: item.currency,
+              documentCode: 'TRX',
+              documentNumber: id,
+              price: item.price,
+              productCode: item.productCode,
+              quantity: item.qty,
+              subtotal: item.subtotal,
+              unit: item.unit,
+            })
+            .then(val => {
+              console.log(val);
+              return true;
+            })
+            .catch(error => {
+              console.log(error);
+              return false;
+            });
+        });
         setLoading(false);
-        ToastAndroid.show('User account created!', ToastAndroid.BOTTOM);
+        setProduct([]);
+        helpers.removeLocalStorage(`@USER_${login.email}`);
+        // )
+        //   .then(values => {
+        //     console.log(values);
+        //     setLoading(false);
+        //     ToastAndroid.show('Transaction is created!', ToastAndroid.BOTTOM);
+        //   })
+        //   .catch(error => {
+        //     console.log(error);
+        //     setLoading(false);
+        //     ToastAndroid.show('Transaction is Invalid!', ToastAndroid.BOTTOM);
+        //   });
       })
       .catch(error => {
-        ToastAndroid.show('Sign up is invalid!', ToastAndroid.BOTTOM);
+        ToastAndroid.show('Transaction is invalid!', ToastAndroid.BOTTOM);
         console.log('error', error);
         setLoading(false);
       });
-    // if (oldData) {
-    //   let parse = JSON.parse(oldData);
-    //   let oldFilter = parse.filter(i => i.id !== data.id);
-    //   if (parse?.length > 0) {
-    //     let oldQty = parse.find(i => i.id === data.id);
-    //     data['qty'] = parseInt(data['qty'] + oldQty.qty);
-    //   }
-    //   let newData = [...oldFilter, data];
-    //   helpers.setLocalStorage(newData, `@USER_${login.email}`);
-    // } else {
-    //   helpers.setLocalStorage([data], `@USER_${login.email}`);
-    // }
   };
 
   return {navigation, isProduct, isLoading, confirm, updateQty};
