@@ -19,7 +19,7 @@ import helpers from '../../../utils/helpers';
 import useAction from './useAction';
 
 function Checkout() {
-  const {navigation, buy, isQty, setQty} = useAction();
+  const {navigation, isProduct, isLoading, confirm, updateQty} = useAction();
 
   const product = [
     {
@@ -44,31 +44,40 @@ function Checkout() {
 
   function CardCart({data}) {
     return (
-      <TouchableOpacity
-        onPress={() =>
-          navigation.push('ChatDetail', {itemData: JSON.stringify(data)})
-        }
-        style={stylesCust.card}>
+      <View style={stylesCust.card}>
         <View style={stylesCust.cardImage}>
-          <Image source={data.image} style={stylesCust.image} />
+          <Image source={{uri: data.image}} style={stylesCust.image} />
         </View>
         <View style={stylesCust.cardBody}>
           <View style={{height: 35, width: undefined}}>
             <Text style={styles.p4(color.tgrey)} numberOfLines={2}>
-              {data.title}
+              {data.productName}
             </Text>
           </View>
           <Text style={styles.h4(color.tblack)} numberOfLines={1}>
             {helpers.formatCurrency(data.price, 'Rp. ')}
           </Text>
           <ButtonIcon
-            outline={true}
-            type="warning"
-            name="shopping-cart"
+            type={stylesCust.buttonType()}
+            name="plus-circle"
             size={20}
-            alignSelf="flex-end"
-            onClick={() => console.log('warning')}
+            onClick={() => console.log('plus', data)}
           />
+          <View style={stylesCust.qty}>
+            <ButtonIcon
+              type={stylesCust.buttonType()}
+              name="minus-circle"
+              size={20}
+              onClick={() => console.log('minus', data)}
+            />
+            <Text style={stylesCust.qtyText}>{data.qty}</Text>
+            <ButtonIcon
+              type={stylesCust.buttonType()}
+              name="plus-circle"
+              size={20}
+              onClick={() => console.log('plus', data)}
+            />
+          </View>
         </View>
         {/* <View style={stylesCust.chatInfo}>
           <Text style={[styles.textBase(10, color.grey), stylesCust.infoText]}>
@@ -80,24 +89,85 @@ function Checkout() {
             <Text style={[styles.textSemiBold, stylesCust.badgesText]}>99</Text>
           </View>
         </View> */}
-      </TouchableOpacity>
+      </View>
     );
   }
 
   return (
     <>
       <Container
+        loading={isLoading}
         bgColor={color.white8}
         navbar={{
           type: 'fixed',
           title: 'Checkout',
-          onClick: () => navigation.goBack(),
+          onClick: () => navigation.push('Home'),
         }}>
-        {product.length > 0 ? (
+        {isProduct.length > 0 ? (
           <View style={stylesCust.feature}>
             <Divider height={10} />
-            {product.map((item, index) => {
-              return !item.title ? null : <CardCart key={index} data={item} />;
+            {isProduct.map((data, index) => {
+              let discount = parseInt(
+                data.price - (data.price * data.discount) / 100,
+              );
+              return !data?.productName ? null : (
+                <View key={index} style={stylesCust.card}>
+                  <View style={stylesCust.cardImage}>
+                    <Image
+                      source={{uri: data.image}}
+                      style={stylesCust.image}
+                    />
+                  </View>
+                  <View style={stylesCust.cardBody}>
+                    <View style={{height: 35, width: undefined}}>
+                      <Text style={styles.p4(color.tgrey)} numberOfLines={2}>
+                        {data.productName}
+                      </Text>
+                    </View>
+                    {data?.discount > 0 ? (
+                      <>
+                        <Text style={styles.h4()}>
+                          {helpers.formatCurrency(discount, 'Rp. ')}
+                        </Text>
+                        <Divider width={20} />
+                        <Text
+                          style={[
+                            styles.p5(),
+                            {textDecorationLine: 'line-through'},
+                          ]}>
+                          {helpers.formatCurrency(data.price, 'Rp. ')}
+                        </Text>
+                      </>
+                    ) : (
+                      <Text style={styles.h4(color.tblack)} numberOfLines={1}>
+                        {helpers.formatCurrency(data.price, 'Rp. ')}
+                      </Text>
+                    )}
+                    <View style={stylesCust.qty}>
+                      <ButtonIcon
+                        type={stylesCust.buttonType()}
+                        name="minus-circle"
+                        size={20}
+                        onClick={() => updateQty('minus', data)}
+                      />
+                      <Text style={stylesCust.qtyText}>{data.qty}</Text>
+                      <ButtonIcon
+                        type={stylesCust.buttonType()}
+                        name="plus-circle"
+                        size={20}
+                        onClick={() => updateQty('plus', data)}
+                      />
+                    </View>
+                    <Text style={styles.h4(color.tblack)} numberOfLines={1}>
+                      {helpers.formatCurrency(
+                        data?.subtotal ? data.subtotal : 0,
+                        'Rp. ',
+                      )}
+                    </Text>
+                    <Text style={styles.p5(color.tblack)}>Sub Total</Text>
+                  </View>
+                </View>
+              );
             })}
             <Divider height={20} />
           </View>
@@ -105,13 +175,23 @@ function Checkout() {
           <ErrorMessage marginVertical={50} message="Data is not found" />
         )}
       </Container>
-      <ButtonLabel
-        type="primary"
-        solid={true}
-        label="Buy!"
-        size="large"
-        onClick={() => buy()}
-      />
+      <View style={stylesCust.footer}>
+        <Text style={styles.h4()}>
+          Total :{' '}
+          {helpers.formatCurrency(
+            helpers.sumArrayNew(isProduct, 'subtotal'),
+            'Rp. ',
+          )}
+        </Text>
+        <ButtonLabel
+          type="primary"
+          solid={true}
+          disabled={isProduct?.length > 0 ? false : true}
+          label="Buy!"
+          size="large"
+          onClick={() => confirm()}
+        />
+      </View>
     </>
   );
 }
