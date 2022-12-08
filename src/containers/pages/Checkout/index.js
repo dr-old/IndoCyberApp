@@ -19,7 +19,7 @@ import helpers from '../../../utils/helpers';
 import useAction from './useAction';
 
 function Checkout() {
-  const {navigation, isProduct, buy, updateQty} = useAction();
+  const {navigation, isProduct, isLoading, confirm, updateQty} = useAction();
 
   const product = [
     {
@@ -96,6 +96,7 @@ function Checkout() {
   return (
     <>
       <Container
+        loading={isLoading}
         bgColor={color.white8}
         navbar={{
           type: 'fixed',
@@ -106,6 +107,9 @@ function Checkout() {
           <View style={stylesCust.feature}>
             <Divider height={10} />
             {isProduct.map((data, index) => {
+              let discount = parseInt(
+                data.price - (data.price * data.discount) / 100,
+              );
               return !data?.productName ? null : (
                 <View key={index} style={stylesCust.card}>
                   <View style={stylesCust.cardImage}>
@@ -120,9 +124,25 @@ function Checkout() {
                         {data.productName}
                       </Text>
                     </View>
-                    <Text style={styles.h4(color.tblack)} numberOfLines={1}>
-                      {helpers.formatCurrency(data.price, 'Rp. ')}
-                    </Text>
+                    {data?.discount > 0 ? (
+                      <>
+                        <Text style={styles.h4()}>
+                          {helpers.formatCurrency(discount, 'Rp. ')}
+                        </Text>
+                        <Divider width={20} />
+                        <Text
+                          style={[
+                            styles.p5(),
+                            {textDecorationLine: 'line-through'},
+                          ]}>
+                          {helpers.formatCurrency(data.price, 'Rp. ')}
+                        </Text>
+                      </>
+                    ) : (
+                      <Text style={styles.h4(color.tblack)} numberOfLines={1}>
+                        {helpers.formatCurrency(data.price, 'Rp. ')}
+                      </Text>
+                    )}
                     <View style={stylesCust.qty}>
                       <ButtonIcon
                         type={stylesCust.buttonType()}
@@ -139,20 +159,13 @@ function Checkout() {
                       />
                     </View>
                     <Text style={styles.h4(color.tblack)} numberOfLines={1}>
-                      {helpers.formatCurrency(data.price * data.qty, 'Rp. ')}
+                      {helpers.formatCurrency(
+                        data?.subtotal ? data.subtotal : 0,
+                        'Rp. ',
+                      )}
                     </Text>
-                    <Text style={styles.p4(color.tgrey)}>Sub Total</Text>
+                    <Text style={styles.p5(color.tblack)}>Sub Total</Text>
                   </View>
-                  {/* <View style={stylesCust.chatInfo}>
-          <Text style={[styles.textBase(10, color.grey), stylesCust.infoText]}>
-            {`${moment(new Date(data.date)).format('DD MMM YY')}\n${moment(
-              new Date(data.date),
-            ).format('HH:mm')}`}
-          </Text>
-          {/* <View style={stylesCust.badges}>
-            <Text style={[styles.textSemiBold, stylesCust.badgesText]}>99</Text>
-          </View>
-        </View> */}
                 </View>
               );
             })}
@@ -163,13 +176,20 @@ function Checkout() {
         )}
       </Container>
       <View style={stylesCust.footer}>
+        <Text style={styles.h4()}>
+          Total :{' '}
+          {helpers.formatCurrency(
+            helpers.sumArrayNew(isProduct, 'subtotal'),
+            'Rp. ',
+          )}
+        </Text>
         <ButtonLabel
           type="primary"
           solid={true}
           disabled={isProduct?.length > 0 ? false : true}
           label="Buy!"
           size="large"
-          onClick={() => buy()}
+          onClick={() => confirm()}
         />
       </View>
     </>

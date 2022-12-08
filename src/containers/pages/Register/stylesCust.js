@@ -15,6 +15,8 @@ const stylesCust = StyleSheet.create({
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 20,
+    marginBottom: 30,
   },
 });
 

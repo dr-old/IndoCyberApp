@@ -68,6 +68,15 @@ const helpers = {
       0
     );
   },
+  sumArrayCust: function (a) {
+    let price =
+      a[0]?.discount === 0
+        ? a[0]?.price * a[0]?.qty
+        : (a[0]?.price - (a[0]?.price * a[0]?.discount) / 100) * a[0]?.qty;
+    return (
+      (a.length && parseFloat(price) + helpers.sumArrayNew(a.slice(1))) || 0
+    );
+  },
   initialData: function (n, array, sort, type, date = null) {
     let newArray = [];
 
