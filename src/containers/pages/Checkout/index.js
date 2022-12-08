@@ -17,6 +17,7 @@ import ErrorMessage from '../../../components/molecules/ErrorMessage';
 import stylesCust from './stylesCust';
 import helpers from '../../../utils/helpers';
 import useAction from './useAction';
+import {LoadingExtern} from '../../../components/molecules';
 
 function Checkout() {
   const {navigation, isProduct, isLoading, confirm, updateQty} = useAction();
@@ -96,7 +97,6 @@ function Checkout() {
   return (
     <>
       <Container
-        loading={isLoading}
         bgColor={color.white8}
         navbar={{
           type: 'fixed',
@@ -176,13 +176,15 @@ function Checkout() {
         )}
       </Container>
       <View style={stylesCust.footer}>
-        <Text style={styles.h4()}>
-          Total :{' '}
-          {helpers.formatCurrency(
-            helpers.sumArrayNew(isProduct, 'subtotal'),
-            'Rp. ',
-          )}
-        </Text>
+        {isProduct?.length > 0 ? (
+          <Text style={styles.h4()}>
+            Total :{' '}
+            {helpers.formatCurrency(
+              helpers.sumArrayNew(isProduct, 'subtotal'),
+              'Rp. ',
+            )}
+          </Text>
+        ) : null}
         <ButtonLabel
           type="primary"
           solid={true}
@@ -192,6 +194,7 @@ function Checkout() {
           onClick={() => confirm()}
         />
       </View>
+      {isLoading ? <LoadingExtern /> : null}
     </>
   );
 }
