@@ -18,7 +18,7 @@ export default function TabStack() {
       comp: Checkout,
     },
     {name: 'HistoryTab', label: 'Riwayat', icon: 'history', comp: History},
-    {name: 'NoticationTab', label: 'Notifikasi', icon: 'bell', comp: Setting},
+    // {name: 'NoticationTab', label: 'Notifikasi', icon: 'bell', comp: Setting},
   ];
 
   return (

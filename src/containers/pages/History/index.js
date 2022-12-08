@@ -12,96 +12,62 @@ import {useIsFocused, useNavigation} from '@react-navigation/native';
 import moment from 'moment';
 import {color, styles} from '../../../utils/styles';
 import {Container} from '../../organism';
-import {ButtonIcon, Divider} from '../../../components/atoms';
+import {ButtonIcon, ButtonLabel, Divider} from '../../../components/atoms';
 import ErrorMessage from '../../../components/molecules/ErrorMessage';
 import stylesCust from './stylesCust';
 import helpers from '../../../utils/helpers';
+import useAction from './useAction';
+import {LoadingExtern} from '../../../components/molecules';
 
 function History() {
-  const dispatch = useDispatch();
-  const [refreshing, setRefreshing] = useState(false);
-  const [isSearch, setSearch] = useState(null);
-  const [isData, setData] = useState([]);
-  const navigation = useNavigation();
-  const isFocused = useIsFocused();
-
-  const product = [
-    {
-      title: 'IPhone 14 Pro Max RAM 16GB Free Softcase',
-      place: 'Jakarta Pusat',
-      price: 24000000,
-      image: require('../../../assets/illustration/Iphone-14.png'),
-    },
-    {
-      title: 'Sneakers High School',
-      place: 'Jakarta Selatan',
-      price: 500000,
-      image: require('../../../assets/illustration/Shoes.png'),
-    },
-    {
-      title: 'Premium shallot from bogor / 70gr for every package',
-      place: 'Kab. Bandung',
-      price: 10000,
-      image: require('../../../assets/illustration/Shallot.png'),
-    },
-  ];
-
-  function CardCart({data}) {
-    return (
-      <TouchableOpacity
-        onPress={() =>
-          navigation.push('ChatDetail', {itemData: JSON.stringify(data)})
-        }
-        style={stylesCust.card}>
-        <View style={stylesCust.cardImage}>
-          <Image source={data.image} style={stylesCust.image} />
-        </View>
-        <View style={stylesCust.cardBody}>
-          <View style={{height: 35, width: undefined}}>
-            <Text style={styles.p4(color.tgrey)} numberOfLines={2}>
-              {data.title}
-            </Text>
-          </View>
-          <Text style={styles.h4(color.tblack)} numberOfLines={1}>
-            {helpers.formatCurrency(data.price, 'Rp. ')}
-          </Text>
-          <ButtonIcon
-            outline={true}
-            type="warning"
-            name="shopping-cart"
-            size={20}
-            alignSelf="flex-end"
-            onClick={() => console.log('warning')}
-          />
-        </View>
-        {/* <View style={stylesCust.chatInfo}>
-          <Text style={[styles.textBase(10, color.grey), stylesCust.infoText]}>
-            {`${moment(new Date(data.date)).format('DD MMM YY')}\n${moment(
-              new Date(data.date),
-            ).format('HH:mm')}`}
-          </Text>
-          {/* <View style={stylesCust.badges}>
-            <Text style={[styles.textSemiBold, stylesCust.badgesText]}>99</Text>
-          </View>
-        </View> */}
-      </TouchableOpacity>
-    );
-  }
+  const {navigation, isProduct, isLoading} = useAction();
 
   return (
     <Container
+      loading={isLoading}
       bgColor={color.white8}
       navbar={{
         type: 'fixed',
-        title: 'Riwayat Transaksi',
-        onClick: () => navigation.goBack(),
+        title: 'History Transaction',
+        onClick: () => navigation.push('Home'),
       }}>
-      {product.length > 0 ? (
+      {isProduct.filter(item => item?.id).length > 0 ? (
         <View style={stylesCust.feature}>
           <Divider height={10} />
-          {product.map((item, index) => {
-            return !item.title ? null : <CardCart key={index} data={item} />;
-          })}
+          {isProduct
+            .filter(item => item?.id)
+            .map((data, index) => {
+              return (
+                <View key={index} style={stylesCust.card}>
+                  <ButtonIcon
+                    type={stylesCust.buttonType(color.green)}
+                    name="check"
+                    size={25}
+                    onClick={() => console.log('plus')}
+                  />
+                  <View style={stylesCust.cardBody}>
+                    <Text
+                      style={[
+                        styles.p4(color.tgrey),
+                        {textTransform: 'uppercase'},
+                      ]}
+                      numberOfLines={2}>
+                      {data.documentCode + data.documentNumber}
+                    </Text>
+                    <Text style={styles.h4(color.tblack)} numberOfLines={1}>
+                      {helpers.formatCurrency(
+                        data?.total ? data.total : 0,
+                        'Rp. ',
+                      )}
+                    </Text>
+                    <Text style={styles.p5(color.tblack)}>Total</Text>
+                  </View>
+                  <Text style={[styles.p4(color.tgrey)]} numberOfLines={2}>
+                    {moment(data.date).format('DD MMM YYYY HH:mm')}
+                  </Text>
+                </View>
+              );
+            })}
           <Divider height={20} />
         </View>
       ) : (
