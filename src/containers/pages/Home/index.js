@@ -8,47 +8,8 @@ import stylesCust from './stylesCust';
 import useAction from './useAction';
 
 function Home() {
-  const {
-    category,
-    navigation,
-    onScrollEnd,
-    banner,
-    product,
-    isLoading,
-    isProduct,
-  } = useAction();
-
-  const CardBalance = () => {
-    return (
-      <View style={stylesCust.cardBalance}>
-        <View style={{flex: 1}}>
-          <Text style={styles.p4(color.tgrey)}>Saldo</Text>
-          <Text style={styles.h4(color.white)}>Rp. 1.000.000</Text>
-        </View>
-        <View style={{flexDirection: 'row'}}>
-          <ButtonIcon
-            type={stylesCust.icon}
-            label="Top Up"
-            labelColor={color.white}
-            name="plus-square"
-            marginVertical={0}
-            size={20}
-            onClick={() => console.log('primary')}
-          />
-          <Divider width={10} />
-          <ButtonIcon
-            type={stylesCust.icon}
-            label="Transfer"
-            labelColor={color.white}
-            name="paper-plane"
-            marginVertical={0}
-            size={20}
-            onClick={() => console.log('primary')}
-          />
-        </View>
-      </View>
-    );
-  };
+  const {category, navigation, banner, isLoading, isProduct, signOut} =
+    useAction();
 
   return (
     <Container
@@ -66,7 +27,9 @@ function Home() {
       <View style={stylesCust.card}>
         <Text style={styles.h5(color.bluep1)}>Rekomendasi</Text>
         <Divider height={10} />
-        <CardProduct data={isProduct.filter(item => item?.id)} />
+        {isProduct?.length > 0 ? (
+          <CardProduct data={isProduct.filter(item => item?.id)} />
+        ) : null}
       </View>
     </Container>
   );

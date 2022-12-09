@@ -8,30 +8,28 @@ const useAction = () => {
   const [isLoading, setLoading] = useState(false);
   const [isProduct, setProduct] = useState([]);
 
-  const getTransaction = () => {
-    database()
-      .ref('indocyberapp/transaction')
-      .orderByValue()
-      .once('value')
-      .then(function (snapshot) {
-        let newData = [];
-        snapshot.forEach(function (childSnapshot) {
-          let data = childSnapshot.val();
-          data['id'] = childSnapshot.key;
-          newData.push(data);
+  const getTransaction = async () => {
+    try {
+      await database()
+        .ref('indocyberapp/transaction')
+        .orderByValue()
+        .once('value')
+        .then(function (snapshot) {
+          let newData = [];
+          snapshot.forEach(function (childSnapshot) {
+            let data = childSnapshot.val();
+            data['id'] = childSnapshot.key;
+            newData.push(data);
+          });
+          setProduct(newData);
         });
-        setProduct(newData);
-      });
+    } catch (error) {
+      console.log('error', error);
+    }
   };
 
   useEffect(() => {
-    let mounted = true;
-    if (mounted) {
-      getTransaction();
-    }
-    return () => {
-      mounted = false;
-    };
+    getTransaction();
   });
 
   return {navigation, isProduct, isLoading};
