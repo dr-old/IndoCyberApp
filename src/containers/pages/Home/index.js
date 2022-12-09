@@ -9,14 +9,11 @@ import useAction from './useAction';
 
 function Home() {
   const {
-    category,
-    navigation,
-    onScrollEnd,
     onSearch,
     signOut,
-    isSearch,
+    navigation,
     banner,
-    product,
+    isSearch,
     isLoading,
     isProduct,
   } = useAction();
@@ -37,7 +34,9 @@ function Home() {
       <View style={stylesCust.card}>
         <Text style={styles.h5(color.bluep1)}>Rekomendasi</Text>
         <Divider height={10} />
-        <CardProduct data={isProduct.filter(item => item?.id)} />
+        {isProduct?.length > 0 ? (
+          <CardProduct data={isProduct.filter(item => item?.id)} />
+        ) : null}
       </View>
     </Container>
   );

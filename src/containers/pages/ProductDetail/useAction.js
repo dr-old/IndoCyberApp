@@ -1,10 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {useEffect, useState} from 'react';
-import {Alert, Platform} from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
-import Geolocation from '@react-native-community/geolocation';
-import {check, request, PERMISSIONS, RESULTS} from 'react-native-permissions';
-import database from '@react-native-firebase/database';
+import React, {useState} from 'react';
+import {useSelector} from 'react-redux';
 import helpers from '../../../utils/helpers';
 
 const useAction = () => {
