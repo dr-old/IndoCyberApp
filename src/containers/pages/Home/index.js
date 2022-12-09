@@ -8,15 +8,8 @@ import stylesCust from './stylesCust';
 import useAction from './useAction';
 
 function Home() {
-  const {
-    onSearch,
-    signOut,
-    navigation,
-    banner,
-    isSearch,
-    isLoading,
-    isProduct,
-  } = useAction();
+  const {category, navigation, banner, isLoading, isProduct, signOut} =
+    useAction();
 
   return (
     <Container
@@ -24,7 +17,7 @@ function Home() {
       navbar={{
         type: 'fixed',
         onSearch: () => console.log(),
-        onProfile: () => signOut(),
+        onProfile: () => console.log(),
       }}>
       <View style={stylesCust.card}>
         <Text style={styles.h5(color.bluep1)}>Promo buat kamu</Text>

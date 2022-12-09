@@ -2,15 +2,46 @@ import {useFocusEffect, useNavigation} from '@react-navigation/native';
 import React, {useCallback, useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
 import database from '@react-native-firebase/database';
-import auth from '@react-native-firebase/auth';
+import {auth} from '@react-native-firebase/auth';
 
 const useAction = () => {
   const dispatch = useDispatch();
   const navigation = useNavigation();
   const [isLoading, setLoading] = useState(false);
   const [isProduct, setProduct] = useState([]);
-  const [isProductBackup, setProductBackup] = useState([]);
-  const [isSearch, setSearch] = useState([]);
+
+  const category = [
+    {
+      name: `Pakaian\nWanita`,
+      image: require('../../../assets/icon/Dress.png'),
+      onClick: () => console.log(),
+    },
+    {
+      name: `Pakaian\nPria`,
+      image: require('../../../assets/icon/T-shirt.png'),
+      onClick: () => console.log(),
+    },
+    {
+      name: 'Skincare',
+      image: require('../../../assets/icon/Skincare.png'),
+      onClick: () => console.log(),
+    },
+    {
+      name: 'Sepatu',
+      image: require('../../../assets/icon/Shoes.png'),
+      onClick: () => console.log('MapsLocation'),
+    },
+    {
+      name: 'Elektronik',
+      image: require('../../../assets/icon/Phone-Desktop.png'),
+      onClick: () => navigation.push('Authenticate'),
+    },
+    {
+      name: 'Lainnya',
+      image: require('../../../assets/icon/More.png'),
+      onClick: () => navigation.push('MapsSearch'),
+    },
+  ];
   const banner = [
     {
       image: require('../../../assets/illustration/Banner.png'),
@@ -25,17 +56,6 @@ const useAction = () => {
       image: require('../../../assets/illustration/Banner-3.png'),
     },
   ];
-
-  const onSearch = event => {
-    let searchText = event;
-    setSearch(searchText);
-    searchText = searchText.trim().toUpperCase();
-    let data = isProductBackup;
-    if (data?.length > 0) {
-      data = data.filter(l => l.productName?.toUpperCase().match(searchText));
-      setProduct(data);
-    }
-  };
 
   const getProduct = async () => {
     try {
@@ -52,7 +72,6 @@ const useAction = () => {
               newData.push(data);
             });
             setProduct(newData);
-            setProductBackup(newData);
           }
         });
     } catch (error) {
@@ -62,7 +81,7 @@ const useAction = () => {
 
   useEffect(() => {
     getProduct();
-  }, [setProduct, setProductBackup]);
+  });
 
   // useFocusEffect(() =>
   //   useCallback(() => {
@@ -77,13 +96,12 @@ const useAction = () => {
   };
 
   return {
-    onSearch,
-    signOut,
+    category,
     navigation,
     banner,
-    isSearch,
     isLoading,
     isProduct,
+    signOut,
   };
 };
 
