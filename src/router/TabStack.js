@@ -1,5 +1,5 @@
 import * as React from 'react';
-import createBottomTabNavigator from '@react-navigation/bottom-tabs';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {Checkout, History, Home} from '../containers/pages';
 import {color as clr, styles} from '../utils/styles';
