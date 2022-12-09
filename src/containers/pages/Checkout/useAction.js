@@ -2,8 +2,6 @@ import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
 import {Alert, Platform, ToastAndroid} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
-import Geolocation from '@react-native-community/geolocation';
-import {check, request, PERMISSIONS, RESULTS} from 'react-native-permissions';
 import database from '@react-native-firebase/database';
 import helpers from '../../../utils/helpers';
 import moment from 'moment';
@@ -11,7 +9,6 @@ import moment from 'moment';
 const useAction = () => {
   const login = useSelector(state => state.authReducer);
   const navigation = useNavigation();
-  const [isQty, setQty] = useState(1);
   const [isLoading, setLoading] = useState(false);
   const [isProduct, setProduct] = useState([]);
 
