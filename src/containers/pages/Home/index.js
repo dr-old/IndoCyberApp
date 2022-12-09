@@ -17,7 +17,7 @@ function Home() {
       navbar={{
         type: 'fixed',
         onSearch: () => console.log(),
-        onProfile: () => console.log(),
+        onProfile: () => signOut(),
       }}>
       <View style={stylesCust.card}>
         <Text style={styles.h5(color.bluep1)}>Promo buat kamu</Text>

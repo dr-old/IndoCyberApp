@@ -91,7 +91,7 @@ const useAction = () => {
   //   }, []),
   // );
   const signOut = () => {
-    auth().signOut();
+    // auth().signOut();
     dispatch({type: 'CLEAN_AUTH_USER'});
   };
 
