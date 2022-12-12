@@ -112,17 +112,6 @@ const useAction = () => {
         setLoading(false);
         setProduct([]);
         helpers.removeLocalStorage(`@USER_${login.email}`);
-        // )
-        //   .then(values => {
-        //     console.log(values);
-        //     setLoading(false);
-        //     ToastAndroid.show('Transaction is created!', ToastAndroid.BOTTOM);
-        //   })
-        //   .catch(error => {
-        //     console.log(error);
-        //     setLoading(false);
-        //     ToastAndroid.show('Transaction is Invalid!', ToastAndroid.BOTTOM);
-        //   });
       })
       .catch(error => {
         ToastAndroid.show('Transaction is invalid!', ToastAndroid.BOTTOM);

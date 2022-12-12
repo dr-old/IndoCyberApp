@@ -20,7 +20,7 @@ import useAction from './useAction';
 import {LoadingExtern} from '../../../components/molecules';
 
 function History() {
-  const {navigation, isProduct, isLoading} = useAction();
+  const {login, navigation, isProduct, isLoading} = useAction();
 
   return (
     <Container
@@ -31,11 +31,11 @@ function History() {
         title: 'History Transaction',
         onClick: () => navigation.push('Home'),
       }}>
-      {isProduct.filter(item => item?.id).length > 0 ? (
+      {isProduct.filter(item => item?.email === login.email).length > 0 ? (
         <View style={stylesCust.feature}>
           <Divider height={10} />
           {isProduct
-            .filter(item => item?.id)
+            .filter(item => item?.email === login.email)
             .map((data, index) => {
               return (
                 <View key={index} style={stylesCust.card}>

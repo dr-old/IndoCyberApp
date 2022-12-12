@@ -4,6 +4,7 @@ import {useSelector} from 'react-redux';
 import database from '@react-native-firebase/database';
 
 const useAction = () => {
+  const login = useSelector(state => state.authReducer);
   const navigation = useNavigation();
   const [isLoading, setLoading] = useState(false);
   const [isProduct, setProduct] = useState([]);
@@ -32,7 +33,7 @@ const useAction = () => {
     getTransaction();
   });
 
-  return {navigation, isProduct, isLoading};
+  return {login, navigation, isProduct, isLoading};
 };
 
 export default useAction;

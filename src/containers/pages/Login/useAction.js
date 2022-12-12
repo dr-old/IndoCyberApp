@@ -36,7 +36,7 @@ const useAction = () => {
             type: 'SET_AUTH_USER',
             firstName: 'Danni',
             lastName: 'Ramdan',
-            email: user.email,
+            email: form.email,
             token: user.token,
           });
         }
